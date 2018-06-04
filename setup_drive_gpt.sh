@@ -79,6 +79,8 @@ if [ ! -e /dev/loop0 ]; then
     echo "Aborting ..."
     exit 1
 fi
+
+sleep 5
 # mount the disk on a loop device for formating
 # use the -P switch for loading all partitions
 sudo losetup -P /dev/loop0 $TARGET_DEVICE
@@ -92,6 +94,8 @@ fi
 # format the first partition
 # it must be mounted on loop0p1
 sudo mkexfatfs /dev/loop0p1
+
+sleep 5
 # unmounting the device to be mounted later as g_mass_storage
 sudo losetup -d /dev/loop0
 
