@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # file: setup_drive_mbr.sh
+# requires: exfat-utils
 # This file is a script for creating a virtual image of a block
 # device for sharing files through the g_mass_storage drive of
 # the raspbians. The following environment variables can be used
