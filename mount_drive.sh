@@ -13,11 +13,11 @@
 #
 # Mount /piusb.bin
 #
-# # ./setup_drive_mbr.sh
+# # ./mount_drive.sh
 #
 # Mount a local.bin
 #
-# # TARGET_DEVICE=./local.bin ./setup_drive_mbr.sh
+# # TARGET_DEVICE=./local.bin ./mount_drive.sh
 #
 # The created file will have a partition table of 1 Master Record and
 # 1 volume record of the full size of the disk with a exFAT partition.

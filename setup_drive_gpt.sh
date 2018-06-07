@@ -54,7 +54,7 @@ if [ -z $DEVICE_SIZE ]; then
 fi
 
 # Create a zero filled file for our image
-sudo dd if=/dev/zero of=$TARGET_DEVICE bs=$BLOCK_SIZE count=0 seek=$DEVICE_SIZE
+sudo dd if=/dev/zero of=$TARGET_DEVICE bs=$BLOCK_SIZE count=$DEVICE_SIZE seek=0
 
 # Create a partition table of 1 Master Record and 1 Volume Record
 # This is needed for Windows to detect the virtual device
@@ -79,6 +79,7 @@ if [ ! -e /dev/loop0 ]; then
     echo "Aborting ..."
     exit 1
 fi
+sleep 5
 # mount the disk on a loop device for formating
 # use the -P switch for loading all partitions
 sudo losetup -P /dev/loop0 $TARGET_DEVICE
@@ -92,6 +93,7 @@ fi
 # format the first partition
 # it must be mounted on loop0p1
 sudo mkexfatfs /dev/loop0p1
+sleep 5
 # unmounting the device to be mounted later as g_mass_storage
 sudo losetup -d /dev/loop0
 
