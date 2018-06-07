@@ -54,7 +54,7 @@ if [ -z $DEVICE_SIZE ]; then
 fi
 
 # Create a zero filled file for our image
-sudo dd if=/dev/zero of=$TARGET_DEVICE bs=$BLOCK_SIZE count=$DEVICE_SIZE seek=$DEVICE_SIZE
+sudo dd if=/dev/zero of=$TARGET_DEVICE bs=$BLOCK_SIZE count=$DEVICE_SIZE seek=0
 
 # Create a partition table of 1 Master Record and 1 Volume Record
 # This is needed for Windows to detect the virtual device
